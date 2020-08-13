@@ -157,6 +157,7 @@ class WeightedSumGraphRepresentation(NodesToGraphRepresentation):
 
             super().build(input_shapes)
 
+    """
     @tf.function(
         input_signature=(
             NodesToGraphRepresentationInput(
@@ -167,6 +168,7 @@ class WeightedSumGraphRepresentation(NodesToGraphRepresentation):
             tf.TensorSpec(shape=(), dtype=tf.bool),
         )
     )
+    """
     def call(self, inputs: NodesToGraphRepresentationInput, training: bool = False):
         # (1) compute weights for each node/head pair:
         if self._weighting_fun not in ("none", "average"):
